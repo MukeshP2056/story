@@ -172,15 +172,21 @@ if ($stmt->rowCount() > 0) {
 <body>
 
 <!-- Header Section -->
-<header>
+<!-- <header>
     <div class="container">
         <div class="logo">
             <h1>Contact Review Page</h1>
         </div>
         <a href="admin.php" class="back-link">Back to Admin Page</a>
     </div>
-</header>
+</header> -->
+<!-- header -->
+  <?php include('header.php') ?>
+<!--header  -->
 
+<!-- sidebar -->
+ <?php include('sidebar.php') ?>
+ <!-- sidebar  -->
 <!-- Contact Messages Section -->
 <div class="container">
     <h2>Contact Messages</h2>
@@ -205,13 +211,17 @@ if ($stmt->rowCount() > 0) {
 </div>
 
 <!-- Footer Section -->
-<footer>
+<!-- <footer>
     <div class="container">
         <p>&copy; 2024 My Website. All Rights Reserved.</p>
         
     </div>
-</footer>
+</footer> -->
 
+<!-- footer -->
+ <?php include('footer.php') ?>
+ <!-- footer  -->
+ 
 <!-- Bootstrap JS, Popper.js, jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
