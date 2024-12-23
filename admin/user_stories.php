@@ -113,6 +113,13 @@ $result_all = $conn->query($sql_all);
             font-size: 0.95rem;
             margin: 0 0 10px;
         }
+        .contents {
+            margin-left: 270px;
+            padding: 40px;
+        }
+        .header button{
+            width: 11% !important;
+        }
     </style>
     <script>
         // Function to show alert message if a message is set
@@ -124,11 +131,20 @@ $result_all = $conn->query($sql_all);
     </script>
 </head>
 <body onload="showPopup('<?= htmlspecialchars($message); ?>')">
-    <header>
+    <!-- <header>
         <a href="admin.php" class="back-btn">← Back</a>
         <h1>Creative Writing Challenge</h1>
-    </header>
+    </header> -->
 
+    <!-- header -->
+     <?php include('header.php') ?>
+     <!-- header  -->
+
+     <!-- siderbar -->
+      <?php include('sidebar.php') ?>
+      <!-- siderbar  -->
+
+    <div class="contents">
     <div class="container mt-4">
         <h2 class="text-center mb-4">Pending Stories</h2>
         <div class="row">
@@ -158,7 +174,9 @@ $result_all = $conn->query($sql_all);
             <?php endif; ?>
         </div>
     </div>
+    </div>
 
+    <div class="contents">
     <div class="container mt-5">
         <h2 class="text-center mb-4">All Stories</h2>
         <div class="table-responsive">
@@ -202,10 +220,15 @@ $result_all = $conn->query($sql_all);
             </table>
         </div>
     </div>
+    </div>
 
-    <footer class="bg-dark text-white text-center py-3">
+    <!-- <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2024 Creative Writing Challenge</p>
-    </footer>
+    </footer> -->
+
+    <!--   footer  -->
+       <?php include('footer.php') ?>
+    <!-- footer  -->
 </body>
 </html>
 

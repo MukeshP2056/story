@@ -167,6 +167,13 @@ if ($stmt->rowCount() > 0) {
                 font-size: 0.9rem;
             }
         }
+        .contents {
+            margin-left: 270px;
+            padding: 40px;
+        }
+        .header button{
+            width: 11% !important;
+        }
     </style>
 </head>
 <body>
@@ -188,6 +195,7 @@ if ($stmt->rowCount() > 0) {
  <?php include('sidebar.php') ?>
  <!-- sidebar  -->
 <!-- Contact Messages Section -->
+<div class="contents">
 <div class="container">
     <h2>Contact Messages</h2>
 
@@ -208,6 +216,7 @@ if ($stmt->rowCount() > 0) {
             <p>No contact messages found.</p>
         <?php endif; ?>
     </div>
+</div>
 </div>
 
 <!-- Footer Section -->
