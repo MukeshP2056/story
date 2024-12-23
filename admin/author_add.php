@@ -215,7 +215,17 @@ $result = $conn->query($sql);
             color: white;
             margin-top: 30px;
         }*/
-        
+       
+    .contents {
+            margin-left: 270px;
+            padding: 40px;
+        }
+        .header{
+            height: 40px;
+        }
+        .header h1{
+            margin-left: 5%;
+        }
     </style>
 </head>
 <body>
@@ -226,6 +236,7 @@ $result = $conn->query($sql);
 <!-- Header Section -->
 <?php include('header.php')?>
 
+<div class="contents">
 <div class="container">
 <div class="form-container add">
     <h2><?php echo $edit_mode ? "Edit Author Story" : "Add New Author"; ?></h2>
@@ -246,6 +257,7 @@ $result = $conn->query($sql);
         
         <button type="submit"><?php echo $edit_mode ? "Update Story" : "Add Story"; ?></button>
     </form>
+</div>
 </div>
 
 <div class="container">

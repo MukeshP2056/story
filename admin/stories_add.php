@@ -302,19 +302,30 @@ table .delete-button:hover {
   background: #c0392b;
   transform: scale(1.05);
 }
-
+.contents {
+            margin-left: 270px;
+            padding: 40px;
+        }
+        .header{
+            height: 40px;
+        }
+        .header h1{
+            margin-left: 5%;
+        }
   </style>
 </head>
 <body>
+<?php include('header.php')?>
 
   <!--siderbar section-->
   <?php include('sidebar.php')?>
 
   <!-- Header Section -->
-  <?php include('header.php')?>
   
 
   <!-- Container -->
+  <div class="contents">
+
   <div class="container">
     <h2><?php echo isset($story) ? 'Edit' : 'Add'; ?> Story</h2>
     <form class="story-form" action="" method="POST" enctype="multipart/form-data">
@@ -346,9 +357,11 @@ table .delete-button:hover {
 
       <button type="submit" class="submit-button"><?php echo isset($story) ? 'Update' : 'Add'; ?> Story</button>
     </form>
+  </div> 
   </div>
 
   <!-- Stories Table -->
+  <div class="contents">
   <div class="container">
     <h2>All Stories</h2>
     <table>
@@ -385,6 +398,7 @@ table .delete-button:hover {
     </table>
   </div>
 
+  </div>
   <!-- Footer Section -->
   <?php include('footer.php')?>
 </body>

@@ -176,7 +176,7 @@ main {
 .btn-primary {
   background: linear-gradient(to right, #320A2C, #6A1B47);
   border: none;
-  font-size: 16px;
+  /* font-size: 16px; */
   font-weight: 600;
   padding: 10px;
   border-radius: 8px;
@@ -249,16 +249,26 @@ main {
     width: 70%;
     margin-left: 22%;}
 
+    /* .header button{
+      width: 11% !important;
+      display: flex;
+      justify-content: end !important
+      ;
+      margin-left: 90%;
+    } */
+    .header{
+      align-items: center;
+    }
+
+    .header button{
+      width: 11% !important;
+    }
   </style>
 </head>
 <body>
   <!-- Header -->
-  <header>
-    <div class="header-container">
-      <h1>Genres</h1>
-      <a href="admin.php" class="btn btn-light">Back</a>
-    </div>
-  </header>
+   <?php include('header.php') ?>
+  <!-- header end  -->
   <div style="display: flex;">
   <?php include('sidebar.php')?>  
 

@@ -1,4 +1,14 @@
 <style>
+    :root {
+            --primary-color: #1e272e;
+            --secondary-color: #27ae60;
+            --accent-color: #e84118;
+            --gradient-primary: linear-gradient(to right, #640D5F, #B53471);
+            --gradient-secondary: linear-gradient(to right, #640D5F, #FF6EC7);
+            --background-color: #f1f2f6;
+            --card-bg: #ffffff;
+            --card-shadow: rgba(0, 0, 0, 0.15);
+        }
     /* Header */
     .header {
             background: linear-gradient(to right, #320A2C, #6A1B47);
@@ -8,6 +18,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
         }
 
         .header h1 {
@@ -20,9 +32,10 @@
             color: white;
             padding: 10px 20px;
             border-radius: 20px;
-            font-size: 16px;
+            font-size: 16px !important;
             cursor: pointer;
             transition: all 0.3s;
+            width: 10%;
         }
 
         .header button:hover {
@@ -59,11 +72,12 @@
                 font-size: 18px;
             }
         }
+
 </style>
 
 <!-- Header -->
     <div class="header">
-        <h1>Welcome, Admin!</h1>
+        <h1> Welcome,Admin!</h1>
         <button onclick="window.location.href='../login.php'">
             <i class="fas fa-sign-out-alt"></i> Log Out
         </button>

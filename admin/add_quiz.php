@@ -226,17 +226,31 @@ $stories = getStories();
                 font-size: 0.9rem;
             }
         }
+        /* .header button{
+      width: 11% !important;
+      display: flex;
+      justify-content: end !important
+      ;
+      margin-left: 90%;
+    } */
+    .header{
+            height: 40px;
+        }
+        .header h1{
+            margin-left: 5%;
+        }
     </style>
 </head>
 <body>
-    
+<?php include('header.php')?>    
+
     <!--siderbar section-->
     <?php include('sidebar.php')?>
 
     <!-- Header Section -->
-    <?php include('header.php')?>    
 
     <main>
+        <div>
         <h1 style=" color: #6a11cb;">Create a Quiz</h1>
         <form method="POST">
     <label for="story_id">Select Story:</label>
@@ -270,6 +284,7 @@ $stories = getStories();
 
     <button type="submit">Save All Quizzes</button>
 </form>
+        </div>
 
     </main>
    <!-- Footer Section -->

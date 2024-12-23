@@ -127,7 +127,7 @@ $stories_result = $conn->query($stories_sql);
     cursor: pointer;
     transition: all 0.3s ease;
     z-index: 1000; /* Ensures it appears on top of other elements */
-    }
+    
 
     /*.header .back-button:hover {
       background: #ab00ff;
@@ -306,6 +306,13 @@ $stories_result = $conn->query($stories_sql);
       border-radius: 5px;
       width: 100%;
     }
+    /* .header button{
+      width: 11% !important;
+      display: flex;
+      justify-content: end !important
+      ;
+      margin-left: 90%;
+    } */
   </style>
 </head>
 <body>
@@ -321,6 +328,7 @@ $stories_result = $conn->query($stories_sql);
 
   <!-- Main Content -->
   <main>
+    <div class="contents">
     <div class="form-container">
       <?php if (isset($_GET['edit_id'])): ?>
         <form action="" method="post">
@@ -388,6 +396,7 @@ $stories_result = $conn->query($stories_sql);
       <?php endif; ?>
     </div>
 
+    </div>
     <!-- Display Stories -->
     <div class="table-container">
       <h2>Story List</h2>

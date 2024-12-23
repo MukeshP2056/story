@@ -100,7 +100,7 @@ $conn->close();
     .header h1 {
       margin: 0;
       font-size: 2rem;
-      text-align: center;
+      /* text-align: center;/ */
       flex-grow: 1;
     }
 
@@ -225,6 +225,10 @@ $conn->close();
       padding: 15px;
       text-align: left;
     }
+    .contents {
+            margin-left: 270px;
+            padding: 40px;
+        }
   </style>
 </head>
 <body>
@@ -272,7 +276,7 @@ $conn->close();
   </div>
 
   <!-- Table to Display Content -->
-  <div class="table-container">
+  <div class="contents table-container">
     <h4>Content from Database</h4>
     <table class="table table-striped">
       <thead>
