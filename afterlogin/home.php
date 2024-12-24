@@ -283,7 +283,7 @@ position: relative;  height: 100%;
                                 <li><a href="./blogs.php">Own Stories</a></li>
                                 <li><a href="./aifeatures1.php">AI Features</a></li>
                                 <li><a href="./contant1.php">Contacts</a></li>
-                                <li><a href="./taskmap.php">Task </a></li>
+                                <!-- <li><a href="./taskmap.php">Task </a></li> -->
                                 
                             </ul>
                         </nav>
