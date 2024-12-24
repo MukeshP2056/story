@@ -35,16 +35,15 @@ if ($result->num_rows > 0) {
     die("Story not found.");
 }
 
-// Insert into favorites (if user is logged in and submits)
+// Handle "Add to Favorites" functionality
 if (isset($_POST['story_id']) && isset($_SESSION['user_id'])) {
-    $story_id = $_POST['story_id'];
-    $user_id = $_SESSION['user_id'];
+    $story_id = (int)$_POST['story_id'];
+    $user_id = (int)$_SESSION['user_id'];
 
-    // Use prepared statement to prevent SQL injection
     $sql = "INSERT INTO favorites (user_id, story_id) VALUES (?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ii", $user_id, $story_id);
-    
+
     if ($stmt->execute()) {
         echo "Story added to favorites!";
     } else {
@@ -206,9 +205,14 @@ $conn->close();
             <div class="col-lg-6">
                 <p><?php echo nl2br(htmlspecialchars($story['Story_Content'])); ?></p>
                 <!-- Add to Favorites Button -->
-                <button class="favorite-btn" data-story-id="<?php echo $story['id']; ?>">Add to Favorites</button>
-                <button class="take-quiz" data-story-id="<?php echo $story['id']; ?>">Take Quiz</button>
-
+                <div class="d-flex" style="gap:10px">
+                <button class="favorite-btn btn-primary" style="padding: 10px;border-radius:3px" data-story-id="<?php echo $story['id']; ?>">Add to Favorites</button>
+                <button class="take-quiz btn-primary" style="padding: 10px;border-radius:3px" data-story-id="<?php echo $story['id']; ?>">Take Quiz</button>
+                <form method="POST" action="download_pdf.php">
+                        <input type="hidden" name="story_id" value="<?php echo $story['id']; ?>">
+                        <button type="submit" class="btn-primary" style="padding: 10px;border-radius:3px;background-color:#007bff;color:#fff;border:none">Download as PDF</button>
+                    </form>
+                </div>
             </div>    
         </div>
     </div>

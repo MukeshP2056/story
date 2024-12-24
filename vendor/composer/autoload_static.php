@@ -17,6 +17,8 @@ class ComposerStaticInit6405029f70e23aeae5a145cd3210c21e
             'Symfony\\Contracts\\Service\\' => 26,
             'Symfony\\Contracts\\HttpClient\\' => 29,
             'Symfony\\Component\\HttpClient\\' => 29,
+            'Svg\\' => 4,
+            'Sabberworm\\CSS\\' => 15,
         ),
         'P' => 
         array (
@@ -34,10 +36,22 @@ class ComposerStaticInit6405029f70e23aeae5a145cd3210c21e
         array (
             'Nyholm\\Psr7\\' => 12,
         ),
+        'M' => 
+        array (
+            'Masterminds\\' => 12,
+        ),
         'H' => 
         array (
             'Http\\Message\\MultipartStream\\' => 29,
             'Http\\Discovery\\' => 15,
+        ),
+        'F' => 
+        array (
+            'FontLib\\' => 8,
+        ),
+        'D' => 
+        array (
+            'Dompdf\\' => 7,
         ),
     );
 
@@ -54,14 +68,22 @@ class ComposerStaticInit6405029f70e23aeae5a145cd3210c21e
         array (
             0 => __DIR__ . '/..' . '/symfony/http-client',
         ),
+        'Svg\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dompdf/php-svg-lib/src/Svg',
+        ),
+        'Sabberworm\\CSS\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sabberworm/php-css-parser/src',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/src',
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -83,6 +105,10 @@ class ComposerStaticInit6405029f70e23aeae5a145cd3210c21e
         array (
             0 => __DIR__ . '/..' . '/nyholm/psr7/src',
         ),
+        'Masterminds\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/masterminds/html5/src',
+        ),
         'Http\\Message\\MultipartStream\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-http/multipart-stream-builder/src',
@@ -91,10 +117,19 @@ class ComposerStaticInit6405029f70e23aeae5a145cd3210c21e
         array (
             0 => __DIR__ . '/..' . '/php-http/discovery/src',
         ),
+        'FontLib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dompdf/php-font-lib/src/FontLib',
+        ),
+        'Dompdf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dompdf/dompdf/src',
+        ),
     );
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Dompdf\\Cpdf' => __DIR__ . '/..' . '/dompdf/dompdf/lib/Cpdf.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

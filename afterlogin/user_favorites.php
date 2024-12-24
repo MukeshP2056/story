@@ -17,14 +17,14 @@ if ($conn->connect_error) {
 
 // Ensure user is logged in
 if (!isset($_SESSION['user_id'])) {
-    echo "Please log in to view your favorite stories.";
+    echo "<p>Please log in to view your favorite stories.</p>";
     exit;
 }
 
 $user_id = $_SESSION['user_id']; // Get logged-in user ID from session
 
-// Fetch the favorite stories
-$sql = "SELECT stories_add.id, stories_add.story_title, stories_add.story_content,stories_add.image_path
+// Fetch favorite stories
+$sql = "SELECT stories_add.id, stories_add.story_title, stories_add.story_content, stories_add.image_path
         FROM stories_add
         JOIN favorites ON stories_add.id = favorites.story_id
         WHERE favorites.user_id = ?";
@@ -238,15 +238,13 @@ $result = $stmt->get_result();
             if ($result->num_rows > 0) {
                 echo "<div class='favorites-list'>";
                 while ($row = $result->fetch_assoc()) {
+                    $story_id = $row['id'];
                     $story_title = htmlspecialchars($row['story_title']);
-                    $story_description = htmlspecialchars($row['story_content']);
-                    $image=htmlspecialchars($row['image_path']);
+                    $image = htmlspecialchars($row['image_path']);
                     echo "<div class='favorite-story'>";
-                    echo "<img src='$image'>";
+                    echo "<img src='$image' alt='Story Image'>";
                     echo "<h2>$story_title</h2>";
-                    echo"<button class='btn btn-primary' style='    position: relative;
-                    left: 20%;'>READ MORE</button>";
-                    // echo "<p>$story_description</p>";
+                    echo "<a href='story_detail.php?id=$story_id' class='btn btn-primary'>READ MORE</a>";
                     echo "</div>";
                 }
                 echo "</div>";

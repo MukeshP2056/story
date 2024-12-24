@@ -55,11 +55,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $author_name = $_POST['author_name'];
     $story_title = $_POST['story_title'];
     $story_des = $conn->real_escape_string($_POST['story_des']);
-    $story_content =$conn->real_escape_string( $_POST['story_content']); 
+    $story_content = $conn->real_escape_string($_POST['story_content']);
 
-    if (isset($_POST['edit_id'])) {
+    if (isset($_POST['edit_id']) && !empty($_POST['edit_id'])) {
         // Update existing record
-        $edit_id = $_POST['edit_id'];
+        $edit_id = (int)$_POST['edit_id']; // Ensure it's an integer
         $sql = "UPDATE author_add SET 
                     author_name = '$author_name', 
                     story_title = '$story_title', 
@@ -83,6 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
+
 // Fetch data from the database
 $sql = "SELECT * FROM author_add";
 $result = $conn->query($sql);
@@ -97,6 +98,8 @@ $result = $conn->query($sql);
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -229,16 +232,17 @@ $result = $conn->query($sql);
     </style>
 </head>
 <body>
+<!-- Header Section -->
+<?php include('header.php')?>
 
 <!--siderbar section-->
 <?php include('sidebar.php')?>
 
-<!-- Header Section -->
-<?php include('header.php')?>
 
 <div class="contents">
+
 <div class="container">
-<div class="form-container add">
+<div class="form-container">
     <h2><?php echo $edit_mode ? "Edit Author Story" : "Add New Author"; ?></h2>
     <form action="author_add.php" method="POST">
         <input type="hidden" name="edit_id" value="<?php echo $edit_mode ? $edit_id : ''; ?>">
@@ -259,7 +263,9 @@ $result = $conn->query($sql);
     </form>
 </div>
 </div>
+</div>
 
+<div class="contents">
 <div class="container">
     <h2>Author Stories</h2>
     <table>
@@ -299,6 +305,7 @@ $result = $conn->query($sql);
     </table>
 </div>
 
+</div>
 <!-- Footer Section -->
 <?php include('footer.php')?>
 
