@@ -23,14 +23,18 @@
 }
 
 .sidebar a {
-  display: block;
+  /* display: block; */
   color: white;
   text-decoration: none;
-  padding: 10px 15px;
+  padding: 18px 15px;
   margin-bottom: 10px;
   border-radius: 8px;
   transition: background 0.3s;
   font-size: 16px;
+  display: flex
+;
+    align-items: baseline;
+    gap: 20px;
 }
 
 .sidebar a:hover {

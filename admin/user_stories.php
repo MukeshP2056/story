@@ -52,13 +52,15 @@ $result_all = $conn->query($sql_all);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stories</title>
+    <title>Kahaani - Endless Tales</title>
+    <link rel="icon" type="image/x-icon" href="../img/logo3.jpg">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(120deg, #89f7fe, #66a6ff);
+            /* background: linear-gradient(120deg, #89f7fe, #66a6ff); */
             color: #333;
         }
         header {
@@ -115,10 +117,13 @@ $result_all = $conn->query($sql_all);
         }
         .contents {
             margin-left: 270px;
-            padding: 40px;
+            /* padding: 40px; */
         }
         .header button{
             width: 11% !important;
+        }
+        .table-responsive{
+            border: 1px solid #ccc;
         }
     </style>
     <script>

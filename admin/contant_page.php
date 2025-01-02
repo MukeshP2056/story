@@ -33,8 +33,9 @@ if ($stmt->rowCount() > 0) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Messages</title>
-    
+    <title>Kahaani - Endless Tales</title>
+    <link rel="icon" type="image/x-icon" href="../img/logo3.jpg">
+
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     

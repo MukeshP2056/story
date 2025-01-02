@@ -121,7 +121,9 @@ $stories_result = $conn->query($stories_sql);
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manage Stories</title>
+  <title>Kahaani - Endless Tales</title>
+  <link rel="icon" type="image/x-icon" href="../img/logo3.jpg">
+
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
