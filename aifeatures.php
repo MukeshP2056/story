@@ -187,7 +187,7 @@
 
     <!-- Footer -->
     <footer class="py-4" style="background: #640D5F; color: #fff; text-align: center;">
-        <p>© 2024 Kahhanii. All rights reserved.</p>
+        <p>© 2024 Kahhanii - Endless Tales. All rights reserved.</p>
     </footer>
     
     <!-- Testimonials Section -->

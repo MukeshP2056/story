@@ -339,7 +339,7 @@
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy;  Kahaani. All rights reserved.</p>
+        <p>&copy;  Kahaani - Endless tales. All rights reserved.</p>
         
     </footer>
 

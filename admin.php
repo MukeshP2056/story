@@ -189,7 +189,7 @@
 
 <!-- Footer -->
 <footer>
-    <p>&copy; 2023 Story App. All rights reserved.</p>
+    <p>&copy; Kahaani - Endless Tales. All rights reserved.</p>
 </footer>
 
 </body>
