@@ -117,7 +117,7 @@ $conn->close();
 
         .story-detail video {
             width: 100%;
-            margin-top: 20px;
+            /* margin-top: 20px; */
         }
     </style>
 </head>
@@ -191,32 +191,48 @@ $conn->close();
     </div>
 
     <div class="story-detail">
-        <h1><?php echo htmlspecialchars($story['Story_Title']); ?></h1>
-        <h4>By: <?php echo htmlspecialchars($story['Author_Name']); ?> | Genre: <?php echo htmlspecialchars($story['genres_name']); ?></h4>
-        <div class="row">
-            <div class="col-lg-6">
-                <img src="<?php echo htmlspecialchars($story['image_path'] ?: '../img/placeholder.png'); ?>" 
-                     alt="<?php echo htmlspecialchars($story['Story_Title']); ?>">
-                <?php if (!empty($story['video_path'])): ?>
-                    <video controls>
-                        <source src="<?php echo htmlspecialchars($story['video_path']); ?>" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                <?php endif; ?>
+    <h1><?php echo htmlspecialchars($story['Story_Title']); ?></h1>
+    <h4>By: <?php echo htmlspecialchars($story['Author_Name']); ?> | Genre: <?php echo htmlspecialchars($story['genres_name']); ?></h4>
+
+    <!-- Image and Video Section -->
+    <div class="row" style="margin: 0;">
+    <div class="col-lg-6" style="padding: 0;">
+        <img src="<?php echo htmlspecialchars($story['image_path'] ?: '../img/placeholder.png'); ?>" 
+             alt="<?php echo htmlspecialchars($story['Story_Title']); ?>" style="width: 98%; height: 320px; border-radius: 8px;">
+    </div>
+    <div class="col-lg-6" style="padding: 0;">
+        <?php if (!empty($story['video_path'])): ?>
+            <video controls style="width: 100%; height: auto; border-radius: 8px;">
+                <source src="<?php echo htmlspecialchars($story['video_path']); ?>" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        <?php endif; ?>
+    </div>
+</div>
+
+
+    <!-- Content Section -->
+    <div class="row mt-4">
+        <div class="col-lg-12">
+            <p><?php echo nl2br(htmlspecialchars($story['Story_Content'])); ?></p>
+
+            <!-- Action Buttons -->
+            <div class="d-flex" style="gap: 10px; margin-bottom: 20px;">
+                <button class="favorite-btn btn-primary" style="padding: 10px; border-radius: 3px;" data-story-id="<?php echo $story['id']; ?>">Add to Favorites</button>
+                <button class="take-quiz btn-primary" style="padding: 10px; border-radius: 3px;" data-story-id="<?php echo $story['id']; ?>">Take Quiz</button>
+                <form method="POST" action="download_pdf.php" style="margin: 0;">
+                    <input type="hidden" name="story_id" value="<?php echo $story['id']; ?>">
+                    <button type="submit" class="btn-primary" style="padding: 10px; border-radius: 3px; background-color: #007bff; color: #fff; border: none;">Download as PDF</button>
+                </form>
             </div>
-            <div class="col-lg-6">
-                <p><?php echo nl2br(htmlspecialchars($story['Story_Content'])); ?></p>
-                <!-- Add to Favorites Button -->
-                <div class="d-flex" style="gap:10px">
-                <button class="favorite-btn btn-primary" style="padding: 10px;border-radius:3px" data-story-id="<?php echo $story['id']; ?>">Add to Favorites</button>
-                <button class="take-quiz btn-primary" style="padding: 10px;border-radius:3px" data-story-id="<?php echo $story['id']; ?>">Take Quiz</button>
-                <form method="POST" action="download_pdf.php">
-                        <input type="hidden" name="story_id" value="<?php echo $story['id']; ?>">
-                        <button type="submit" class="btn-primary" style="padding: 10px;border-radius:3px;background-color:#007bff;color:#fff;border:none">Download as PDF</button>
-                    </form>
-                </div>
-            </div>    
         </div>
+    </div>
+</div>
+
+    
+
+</div>
+
     </div>
 
     <!-- Footer Section Begin -->

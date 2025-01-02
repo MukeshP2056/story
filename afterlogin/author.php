@@ -140,7 +140,7 @@ img{
                 <div class="col-lg-2">
                     <div class="header__logo">
                         <a href="./index.php">
-                            <img src="../img/logo3.jpg" alt="">
+                            <img src="../img/logo3.jpg" alt="" style="width: 100%; height: 66px;">
                         </a>
                     </div>
                 </div>
@@ -237,7 +237,7 @@ img{
         <div class="row">
             <div class="col-lg-3">
                 <div class="footer__logo">
-                    <a href="./index.html"><img src="../img/logo3.jpg" alt=""></a>
+                    <a href="./index.html"><img src="../img/logo3.jpg" alt="" style="width: 100%;height: 66px;"></a>
                 </div>
             </div>
             <div class="col-lg-6">

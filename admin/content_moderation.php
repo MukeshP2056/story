@@ -101,7 +101,6 @@ $conn->close();
     .header h1 {
       margin: 0;
       font-size: 2rem;
-      /* text-align: center;/ */
       flex-grow: 1;
     }
 
@@ -226,51 +225,56 @@ $conn->close();
       padding: 15px;
       text-align: left;
     }
+
     .contents {
-            margin-left: 270px;
-            padding: 40px;
-        }
+      margin-left: 270px;
+      padding: 40px;
+    }
   </style>
 </head>
 <body>
 
-  <!--siderbar section-->
+  <!-- Sidebar Section -->
   <?php include('sidebar.php')?>
 
   <!-- Header Section -->
   <?php include('header.php')?>
-  
 
   <!-- Status Message -->
   <div class="form-container">
     <?php if (isset($_GET['status'])): ?>
-      <?php if ($_GET['status'] == 'success'): ?>
-        <div class="alert alert-success">Content added/updated successfully!</div>
-      <?php elseif ($_GET['status'] == 'error'): ?>
-        <div class="alert alert-danger">Failed to add/update content. Please try again.</div>
-      <?php elseif ($_GET['status'] == 'deleted'): ?>
-        <div class="alert alert-success">Content deleted successfully!</div>
-      <?php elseif ($_GET['status'] == 'delete_error'): ?>
-        <div class="alert alert-danger">Failed to delete content. Please try again.</div>
-      <?php endif; ?>
+      <script>
+        // Display an alert based on the status in URL
+        <?php if ($_GET['status'] == 'success'): ?>
+          alert('Content added/updated successfully!');
+        <?php elseif ($_GET['status'] == 'error'): ?>
+          alert('Failed to add/update content. Please try again.');
+        <?php elseif ($_GET['status'] == 'deleted'): ?>
+          alert('Content deleted successfully!');
+        <?php elseif ($_GET['status'] == 'delete_error'): ?>
+          alert('Failed to delete content. Please try again.');
+        <?php endif; ?>
+      </script>
     <?php endif; ?>
 
     <!-- Form to Add/Edit Content -->
     <form action="content_moderation.php" method="post">
       <input type="hidden" id="id" name="id" value="<?php echo isset($_GET['id']) ? htmlspecialchars($_GET['id']) : ''; ?>">
-      
+
       <label for="email">Email Address</label>
       <input type="email" id="email" name="email" placeholder="Enter your email" 
-             value="<?php echo isset($_GET['email']) ? htmlspecialchars($_GET['email']) : ''; ?>" required>
+             value="<?php echo isset($_GET['email']) ? htmlspecialchars($_GET['email']) : ''; ?>" 
+             required pattern="[a-zA-Z0-9._%+-]+@gmail\.com$" title="Only Gmail addresses are allowed">
 
       <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" 
-             value="<?php echo isset($_GET['phone']) ? htmlspecialchars($_GET['phone']) : ''; ?>" required>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" 
+             pattern="\d{10}" value="<?php echo isset($_GET['phone']) ? htmlspecialchars($_GET['phone']) : ''; ?>" 
+             required title="Phone number must be 10 digits">
 
       <label for="address">Address</label>
-      <textarea id="address" name="address" placeholder="Enter your address" rows="4" required><?php 
-        echo isset($_GET['address']) ? htmlspecialchars($_GET['address']) : ''; 
-      ?></textarea>
+      <textarea id="address" name="address" placeholder="Enter your address" rows="4" required>
+        <?php echo isset($_GET['address']) ? htmlspecialchars($_GET['address']) : ''; ?>
+      </textarea>
 
       <button type="submit" class="submit-btn">Save Content</button>
     </form>
@@ -307,11 +311,31 @@ $conn->close();
   </div>
 
   <!-- Footer -->
-  <!-- Footer Section -->
   <?php include('footer.php')?>
+<script>
+   document.querySelector('form').addEventListener('submit', function(event) {
+        var email = document.getElementById('email');
+        var phone = document.getElementById('phone');
+        
+        // Email validation check (for Gmail)
+        var emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+        if (!emailPattern.test(email.value)) {
+            alert('Please enter a valid Gmail address.');
+            email.focus();
+            event.preventDefault();
+        }
 
+        // Phone validation check (10 digits)
+        var phonePattern = /^\d{10}$/;
+        if (!phonePattern.test(phone.value)) {
+            alert('Phone number must be 10 digits.');
+            phone.focus();
+            event.preventDefault();
+        }
+    });
+</script>
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
-
