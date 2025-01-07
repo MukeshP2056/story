@@ -333,9 +333,7 @@ ol {
 	background: #640D5F;
 }
 
-.header__logo {
-	/* padding: 20px 0 17px; */
-}
+
 
 .header__logo a {
 	display: inline-block;
@@ -1937,8 +1935,10 @@ ol {
 .footer {
 	background: #640D5F;
 	padding-top: 60px;
-	padding-bottom: 40px;
-	position: relative;
+	padding-bottom: 60px;	
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 }
 
 .page-up {
